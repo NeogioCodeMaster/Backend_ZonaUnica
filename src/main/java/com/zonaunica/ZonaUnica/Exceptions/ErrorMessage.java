@@ -1,4 +1,4 @@
-package com.zonaunica.ZonaUnica.Exceptions;
+package com.zonaunica.ZonaUnica.exceptions;
 
 public class ErrorMessage {
     private String type;
@@ -14,7 +14,7 @@ public class ErrorMessage {
         this.type="";
         this.message="";
     }
-    
+
     public String getType() {
         return type;
     }
