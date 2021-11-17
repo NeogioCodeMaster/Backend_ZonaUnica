@@ -1,4 +1,4 @@
-package com.zonaunica.ZonaUnica.exceptions;
+package com.zonaunica.ZonaUnica.Exceptions;
 
 public class CustomException extends RuntimeException {
     public CustomException(String msg){

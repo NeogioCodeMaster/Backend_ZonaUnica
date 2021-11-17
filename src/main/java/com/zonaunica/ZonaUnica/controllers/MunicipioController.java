@@ -6,7 +6,7 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import com.zonaunica.ZonaUnica.exceptions.CustomException;
+import com.zonaunica.ZonaUnica.Exceptions.CustomException;
 import com.zonaunica.ZonaUnica.models.MunicipioModel;
 import com.zonaunica.ZonaUnica.services.MunicipioService;
 
