@@ -10,7 +10,7 @@ public class SitioTuristicoModel {
     private String nombre;
     private String descripcion;
     private UsuarioModel usuario;
-    private PlatoTipicoModel plato;
+    private PlatoModel plato;
     private MunicipioModel municipio;
     
     
@@ -38,10 +38,10 @@ public class SitioTuristicoModel {
     public void setUsuario(UsuarioModel usuario) {
         this.usuario = usuario;
     }
-    public PlatoTipicoModel getPlato() {
+    public PlatoModel getPlato() {
         return plato;
     }
-    public void setPlato(PlatoTipicoModel plato) {
+    public void setPlato(PlatoModel plato) {
         this.plato = plato;
     }
     public MunicipioModel getMunicipio() {

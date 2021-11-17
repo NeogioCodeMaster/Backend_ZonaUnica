@@ -16,24 +16,24 @@ public class MunicipioService {
     MunicipioRepository municipioRepository;
 
     public void registrarMunicipio(MunicipioModel municipio){
-        MunicipioRepository.save(municipio);
+         municipioRepository.save(municipio);
     }
 
     public List<MunicipioModel> traerMunicipios(){
-        return MunicipioRepository.findAll();
+        return municipioRepository.findAll();
     }
 
     public Boolean existById(String id){
-        return MunicipioRepository.existsById(id);
+        return municipioRepository.existsById(id);
     }
 
     public Optional<MunicipioModel> buscarById(String id){
-        return MunicipioRepository.findById(id);
+        return municipioRepository.findById(id);
     }
 
 
     public void eliminarById(String id) {
-       MunicipioRepository.deleteById(id);
+       municipioRepository.deleteById(id);
     }
     
 }

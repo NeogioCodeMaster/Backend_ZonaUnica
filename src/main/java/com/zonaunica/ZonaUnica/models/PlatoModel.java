@@ -16,7 +16,7 @@ public class PlatoModel {
     
     private String descripcion;
     private String fotos;
-    private SitioModel sitio;
+    private SitioTuristicoModel sitio;
     
     
     public String getId() {
@@ -43,10 +43,10 @@ public class PlatoModel {
     public void setFotos(String fotos) {
         this.fotos = fotos;
     }
-    public SitioModel getSitio() {
+    public SitioTuristicoModel getSitio() {
         return sitio;
     }
-    public void setSitio(SitioModel sitio) {
+    public void setSitio(SitioTuristicoModel sitio) {
         this.sitio = sitio;
     }
 }

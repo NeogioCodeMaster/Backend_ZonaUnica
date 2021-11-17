@@ -73,7 +73,7 @@ public class SitioTuristicoController {
         } 
         sitioTuristicoService.eliminarById(id);
         respuesta.put("Mensaje", "El id se eliminnó correctamente");
-        return ResponseEntity.ok(respuesta);
+        return ResponseEntity.ok(respuesta); 
     }
 
     private void throwError(Errors error) {

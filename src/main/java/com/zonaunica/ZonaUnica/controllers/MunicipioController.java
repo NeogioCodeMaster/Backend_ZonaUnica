@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import com.zonaunica.ZonaUnica.exceptions.CustomException;
 import com.zonaunica.ZonaUnica.models.MunicipioModel;
 import com.zonaunica.ZonaUnica.services.MunicipioService;
 
@@ -59,7 +60,7 @@ public class MunicipioController {
         respuesta.put("Mensaje", "El municipio se actualizó correctamente");
         return ResponseEntity.ok(respuesta);
     }
-    @DeleteMapping("/sitios/{id}")
+    @DeleteMapping("/municipios/{id}")
     public ResponseEntity<Map<String, String>> eliminarById(@PathVariable String id){
         Boolean existe= municipioService.existById(id);
         Map<String, String> respuesta = new HashMap<>();
