@@ -1,6 +1,5 @@
 package com.zonaunica.ZonaUnica.models;
 
-import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,10 +9,7 @@ public class PlatoModel {
    
     @Id
     private String id;
-    
-    @NotEmpty(message="Este campo no puede quedar vacio")
     private String nombre;
-    
     private String descripcion;
     private String fotos;
     private SitioTuristicoModel sitio;

@@ -1,7 +1,6 @@
 package com.zonaunica.ZonaUnica.models;
 
 import org.springframework.data.mongodb.core.mapping.Document;
-import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
 
@@ -10,10 +9,7 @@ public class MunicipioModel {
     
     @Id
     private String id;
-    
-    @NotEmpty(message="Este campo no puede quedar vacio")
-    private String nombre;
-    
+    private String nombre;   
     private String descripcion;
     private String fotos;
    
