@@ -32,6 +32,9 @@ public class UsuarioService {
         return this.usuarioRepository.findById(id);
     }
 
+    public Boolean existById(String id){
+        return this.usuarioRepository.existsById(id);
+    }
     
     public UsuarioModel buscarUsername(String username) {
         return this.usuarioRepository.findByUsername(username).orElse(new UsuarioModel());

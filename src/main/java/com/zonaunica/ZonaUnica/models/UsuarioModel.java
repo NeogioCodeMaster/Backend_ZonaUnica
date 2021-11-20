@@ -16,6 +16,15 @@ public class UsuarioModel {
     private String telefono;
     private String username;
     private String password;
+    private String hash;
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
 
     public String getId() {
         return this.id;
