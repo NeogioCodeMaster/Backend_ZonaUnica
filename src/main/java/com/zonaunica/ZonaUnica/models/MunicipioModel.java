@@ -11,8 +11,15 @@ public class MunicipioModel {
     private String id;
     private String nombre;   
     private String descripcion;
+    private String departamento;
     private String fotos;
    
+    public String getDepartamento() {
+        return departamento;
+    }
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
     public String getId() {
         return id;
     }

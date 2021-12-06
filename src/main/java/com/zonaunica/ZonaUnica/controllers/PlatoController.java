@@ -16,7 +16,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
-
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost"})
 @RestController
 @RequestMapping("/api")
 public class PlatoController {

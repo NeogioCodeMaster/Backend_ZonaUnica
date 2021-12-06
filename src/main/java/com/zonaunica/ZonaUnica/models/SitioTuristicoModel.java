@@ -9,11 +9,18 @@ public class SitioTuristicoModel {
     private String id;
     private String nombre;
     private String descripcion;
+    private String fotos;
     private UsuarioModel usuario;
     private PlatoModel plato;
     private MunicipioModel municipio;
     
     
+    public String getFotos() {
+        return fotos;
+    }
+    public void setFotos(String fotos) {
+        this.fotos = fotos;
+    }
     public String getId() {
         return id;
     }

@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,13 +27,21 @@ import org.springframework.web.bind.annotation.RestController;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost"})
 @RestController
 @RequestMapping("/api")
 public class UsuarioController {
     
     @Autowired
     UsuarioService usuarioService;
+
+
+    @GetMapping("/verificar")
+    public ResponseEntity<Map<String, Boolean>> validarToken(){
+        Map<String, Boolean> respuesta= new HashMap<>();
+        respuesta.put("ok", true);
+        return ResponseEntity.ok(respuesta);
+    }
 
     @GetMapping("/usuarios")
     public List<UsuarioModel> traerTodos(){

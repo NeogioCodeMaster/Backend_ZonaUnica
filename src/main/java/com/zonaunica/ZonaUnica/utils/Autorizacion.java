@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Component;
 
@@ -27,6 +28,11 @@ public class Autorizacion implements Filter{
             throws IOException, ServletException {
             
         HttpServletRequest httpServletRequest= (HttpServletRequest) request;
+        HttpServletResponse httpServletResponse=(HttpServletResponse) response;
+        httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
+        httpServletResponse.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Access-Control-Allow-Headers, X-Requested-With, X-Auth-Token, Origin");
+        httpServletResponse.setHeader("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS, PUT, PATCH");
+
         String url= httpServletRequest.getRequestURI();
             
         if(url.contains("/api/usuarios/login") || url.contains("/api/usuarios") || url.contains("index") || url.contains(".js") || url.contains("ico") || url.contains("css") || url.contains("assets") || url.contains("#")){
@@ -40,7 +46,7 @@ public class Autorizacion implements Filter{
             }
             try {
                 Jws<Claims> claims= Jwts.parser().setSigningKey(KEY).parseClaimsJws(hash);
-                if(url.contains("/api/municipios") || url.contains("/api/sitios") || url.contains("/api/platos")){
+                if((url.contains("/api/municipios") || url.contains("/api/sitios") || url.contains("/api/platos") || url.contains("/api/verificar")) && (!claims.getBody().get("username").equals(""))){// && (!claims.getBody().get("username").equals(""))
                     chain.doFilter(request, response);
                 }
             } catch (MalformedJwtException e) {
@@ -49,6 +55,8 @@ public class Autorizacion implements Filter{
                 response.getWriter().write(body);
             } catch(ExpiredJwtException e){
                 System.out.println(" Token expired ");
+            }catch (Exception e){
+                System.out.println(e);
             }
         }
         
